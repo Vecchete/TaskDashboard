@@ -1,4 +1,4 @@
-package com.voxus.TaskDashboard.controller;
+package com.voxus.taskdashboard.controller;
 
 import java.util.List;
 import java.util.Locale;
@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
  
-import com.voxus.TaskDashboard.model.*;
-import com.voxus.TaskDashboard.service.*;
+import com.voxus.taskdashboard.model.*;
+import com.voxus.taskdashboard.service.*;
  
 @Controller
 @RequestMapping("/")

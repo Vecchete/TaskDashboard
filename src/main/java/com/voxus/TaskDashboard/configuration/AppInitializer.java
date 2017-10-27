@@ -1,4 +1,4 @@
-package com.voxus.TaskDashboard.configuration;
+package com.voxus.taskdashboard.configuration;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
  

@@ -1,4 +1,4 @@
-package com.voxus.TaskDashboard.model;
+package com.voxus.taskdashboard.model;
  
 import javax.persistence.*;
 

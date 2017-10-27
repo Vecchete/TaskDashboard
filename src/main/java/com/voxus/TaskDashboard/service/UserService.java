@@ -1,7 +1,7 @@
-package com.voxus.TaskDashboard.service;
+package com.voxus.taskdashboard.service;
 
 import java.util.List;
-import com.voxus.TaskDashboard.model.User;
+import com.voxus.taskdashboard.model.User;
 
 public interface UserService {
 	User findById(Integer id);    

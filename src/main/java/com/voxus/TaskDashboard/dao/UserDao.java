@@ -1,7 +1,7 @@
-package com.voxus.TaskDashboard.dao;
+package com.voxus.taskdashboard.dao;
 
 import java.util.List;
-import com.voxus.TaskDashboard.model.User;
+import com.voxus.taskdashboard.model.User;
 
 public interface UserDao {
 	User findById(Integer id);    

@@ -1,4 +1,4 @@
-package com.voxus.TaskDashboard.dao;
+package com.voxus.taskdashboard.dao;
 
 import java.util.List;
  
@@ -8,7 +8,7 @@ import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
  
-import com.voxus.TaskDashboard.model.User;
+import com.voxus.taskdashboard.model.User;
  
   
 @Repository("userDao")

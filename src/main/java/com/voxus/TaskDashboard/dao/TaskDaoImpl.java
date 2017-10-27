@@ -1,4 +1,4 @@
-package com.voxus.TaskDashboard.dao;
+package com.voxus.taskdashboard.dao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository; 
 
-import com.voxus.TaskDashboard.model.Task;
+import com.voxus.taskdashboard.model.Task;
 
 @Repository("taskDao")
 public class TaskDaoImpl extends AbstractDao<Integer, Task>implements TaskDao{

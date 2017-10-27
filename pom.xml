@@ -3,12 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.voxus.TaskDashboard</groupId>
-	<artifactId>Dashboard</artifactId>
+	<groupId>com.voxus.taskdashboard</groupId>
+	<artifactId>TaskDashboard</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>Dashboard</name>
+	<name>TaskDashboard</name>
 
 	<properties>
 		<springframework.version>4.1.7.RELEASE</springframework.version>
@@ -110,13 +110,13 @@
                     <version>2.4</version>
                     <configuration>
                         <warSourceDirectory>src/main/webapp</warSourceDirectory>
-                        <warName>Dashboard</warName>
+                        <warName>TaskDashboard</warName>
                         <failOnMissingWebXml>false</failOnMissingWebXml>
                     </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
-        <finalName>Dashboard</finalName>
+        <finalName>TaskDashboard</finalName>
     </build>
 
 </project>

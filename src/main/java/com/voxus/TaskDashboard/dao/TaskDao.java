@@ -1,7 +1,7 @@
-package com.voxus.TaskDashboard.dao;
+package com.voxus.taskdashboard.dao;
 
 import java.util.List;
-import com.voxus.TaskDashboard.model.Task;
+import com.voxus.taskdashboard.model.Task;
 
 
 public interface TaskDao {

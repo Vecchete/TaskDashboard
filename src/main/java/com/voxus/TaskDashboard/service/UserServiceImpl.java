@@ -1,4 +1,4 @@
-package com.voxus.TaskDashboard.service;
+package com.voxus.taskdashboard.service;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.voxus.TaskDashboard.model.*;
-import com.voxus.TaskDashboard.dao.*;
+import com.voxus.taskdashboard.model.*;
+import com.voxus.taskdashboard.dao.*;
 
 
 @Service("userProfileService")

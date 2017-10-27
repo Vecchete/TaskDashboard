@@ -1,4 +1,4 @@
-package com.voxus.webapp.TaskDashboard;
+package com.voxus.taskdashboard;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

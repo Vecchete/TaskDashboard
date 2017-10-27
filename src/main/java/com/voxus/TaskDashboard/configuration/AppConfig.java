@@ -1,4 +1,4 @@
-package com.voxus.TaskDashboard.configuration;
+package com.voxus.taskdashboard.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
@@ -15,7 +15,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
-import com.voxus.TaskDashboard.converter.*;
+import com.voxus.taskdashboard.converter.*;
  
 @Configuration
 @EnableWebMvc

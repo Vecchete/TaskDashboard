@@ -1,8 +1,8 @@
-package com.voxus.TaskDashboard.service;
+package com.voxus.taskdashboard.service;
 
 import java.util.List;
 
-import com.voxus.TaskDashboard.model.Task;
+import com.voxus.taskdashboard.model.Task;
  
 public interface TaskService {
 

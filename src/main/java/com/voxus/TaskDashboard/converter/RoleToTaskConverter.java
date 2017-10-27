@@ -1,11 +1,11 @@
-package com.voxus.TaskDashboard.converter;
+package com.voxus.taskdashboard.converter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
  
-import com.voxus.TaskDashboard.model.*;
-import com.voxus.TaskDashboard.service.*; 
+import com.voxus.taskdashboard.model.*;
+import com.voxus.taskdashboard.service.*; 
 /**
  * A converter class used in views to map id's to actual userProfile objects.
  */
