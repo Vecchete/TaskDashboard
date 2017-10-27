@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.voxus.TaskDashboard</groupId>
-	<artifactId>TaskDashboard</artifactId>
+	<artifactId>Dashboard</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>TaskDashboard</name>
+	<name>Dashboard</name>
 
 	<properties>
 		<springframework.version>4.1.7.RELEASE</springframework.version>
@@ -110,13 +110,13 @@
                     <version>2.4</version>
                     <configuration>
                         <warSourceDirectory>src/main/webapp</warSourceDirectory>
-                        <warName>TaskDashboard</warName>
+                        <warName>Dashboard</warName>
                         <failOnMissingWebXml>false</failOnMissingWebXml>
                     </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
-        <finalName>TaskDashboard</finalName>
+        <finalName>Dashboard</finalName>
     </build>
 
 </project>
