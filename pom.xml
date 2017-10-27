@@ -4,6 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.voxus.webapp</groupId>
+	<groupId>com.voxus.TaskDashboard</groupId>
 	<artifactId>TaskDashboard</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>

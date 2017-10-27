@@ -25,7 +25,7 @@ import com.voxus.TaskDashboard.service.*;
 public class AppController {
 	private Integer IdUserCounter = 0;
 	private Integer IdTaskCounter = 0;
-	private Integer IdUser = null;
+	private Integer IdUser = 0;
     @Autowired
     UserService userService;
      
@@ -122,9 +122,9 @@ public class AppController {
      
     /**
      * This method will be called on form submission, handling POST request for
-     * updating user in database. It also validates the user input
+     * updating task in database. It also validates the user input
      */
-    @RequestMapping(value = { "/edit-user-{ssoId}" }, method = RequestMethod.POST)
+    @RequestMapping(value = { "/edit-task-{Id}" }, method = RequestMethod.POST)
     public String updateUser(@Valid Task task, BindingResult result,
             ModelMap model) {    	
         if (result.hasErrors()) {
@@ -143,7 +143,7 @@ public class AppController {
  
      
     /**
-     * This method will delete an user by it's SSOID value.
+     * This method will delete an task by it's ID value.
      */
     @RequestMapping(value = { "/delete-task-{Id}" }, method = RequestMethod.GET)
     public String deleteUser(@PathVariable Integer Id,BindingResult result,ModelMap model) {
