@@ -10,7 +10,7 @@ import com.voxus.taskdashboard.model.*;
 import com.voxus.taskdashboard.dao.*;
 
 
-@Service("userProfileService")
+@Service("taskService")
 @Transactional
 public class TaskServiceImpl implements TaskService{
      
@@ -49,13 +49,13 @@ public class TaskServiceImpl implements TaskService{
     	dao.save(task);
     }
     
-    public void create (Integer TaskId, String Name, String Description, Integer Priority, Integer SubmitUserID) {
+    public void create (String Name, String Description, Integer Priority, Integer SubmitUserID) {
     	Task task = new Task();
-    	task.setId(TaskId);
     	task.setName(Name);
     	task.setDesc(Description);
     	task.setPriority(Priority);
     	task.setSubmitID(SubmitUserID);
+    	task.setDoneID(0);
     	task.setStatus(1);
     	save(task);
     }

@@ -5,7 +5,7 @@ import javax.persistence.*;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-@Table(name="Tasks")
+@Table(name="TASK")
 public class Task {
 	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -28,16 +28,16 @@ public class Task {
     private Integer SubmitUserID;
 	
 	@NotEmpty 
-	@Column(name="DoneUserID", nullable=false)
+	@Column(name="DoneUserID", nullable=true)
     private Integer DoneUserID;
 	
 	@NotEmpty 
 	@Column(name="Status", nullable=false)
     private Integer Status;
 	
-	@ManyToMany(fetch = FetchType.LAZY)
-	@Column(name="Files", nullable=true)
-	private List<Integer> Files = new ArrayList<>();
+//	@ManyToMany(fetch = FetchType.LAZY)
+//	@Column(name="Files", nullable=true)
+//	private List<Integer> Files = new ArrayList<>();
 	
 //	@JoinTable(name = "USER_TASK", 
 //  joinColumns = { @JoinColumn(name = "SubmitUserId") }, 
@@ -100,9 +100,9 @@ public class Task {
 		this.Status = status;
 	}
 	
-	public boolean setFile(Integer file) {
-		return Files.add(file);
-	}
+//	public boolean setFile(Integer file) {
+//		return Files.add(file);
+//	}
 	
 	@Override
 	public boolean equals(Object obj) {

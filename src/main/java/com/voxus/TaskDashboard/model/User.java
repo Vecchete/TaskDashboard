@@ -5,7 +5,7 @@ import javax.persistence.*;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-@Table(name="Users")
+@Table(name="USERS")
 public class User {
 
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)

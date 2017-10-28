@@ -22,10 +22,12 @@ import com.voxus.taskdashboard.service.*;
  
 @Controller
 @RequestMapping("/")
+@SessionAttributes("roles")
 public class AppController {
 	private Integer IdUserCounter = 0;
 	private Integer IdTaskCounter = 0;
 	private Integer IdUser = 0;
+	
     @Autowired
     UserService userService;
      
@@ -36,39 +38,7 @@ public class AppController {
     @Autowired
     MessageSource messageSource;
     
-    /**
-     * This method will provide the login.
-     */
-    @RequestMapping(value = { "/login" }, method = RequestMethod.POST)
-    public String loginSuccesful(@PathVariable String Username, @PathVariable String email, ModelMap model) {
-        User user = new User();
-        if (userService.existUser(email)==false) {
-        	user.setId(IdUserCounter);
-        	IdUserCounter++;
-        	user.setUsername(Username);
-        	user.setEmail(email);
-        	userService.save(user);
-        }else {
-        	user = userService.findByEmail(email);
-        }
-        this.IdUser = user.getId();
-        model.addAttribute("user", user);
-        model.addAttribute("logout", false);
-        return "loginSuccess";
-    }
-    
-    /**
-     * This method will provide the medium to logout.
-     */
-    @RequestMapping(value = { "/login" }, method = RequestMethod.GET)
-    public String logoutSuccesful(ModelMap model) {
-        User user = userService.findById(IdUser);
-        this.IdUser = null;
-        model.addAttribute("user", user);
-        model.addAttribute("logout", true);
-        return "logoutSuccess";
-    }
-    
+       
     /**
      * This method will list all tasks.
      */
@@ -100,7 +70,7 @@ public class AppController {
         if (result.hasErrors()) {
             return "registration";
         }
-        taskService.create(this.IdTaskCounter,task.getName(), task.getDesc(), task.getPriority(), this.IdUser);
+        taskService.create(task.getName(), task.getDesc(), task.getPriority(), this.IdUser);
         task = taskService.findById(IdTaskCounter);
         IdTaskCounter++;
         model.addAttribute("success", "Task " + task.getName() + " registered successfully");
@@ -157,5 +127,38 @@ public class AppController {
             return "redirect:/list";
         }
     }     
+    
+    /**
+     * This method will provide the login.
+     */
+    @RequestMapping(value = { "/login" }, method = RequestMethod.POST)
+    public String loginSuccesful(@PathVariable String Username, @PathVariable String email, ModelMap model) {
+        User user = new User();
+        if (userService.existUser(email)==false) {
+        	user.setId(IdUserCounter);
+        	IdUserCounter++;
+        	user.setUsername(Username);
+        	user.setEmail(email);
+        	userService.save(user);
+        }else {
+        	user = userService.findByEmail(email);
+        }
+        this.IdUser = user.getId();
+        model.addAttribute("user", user);
+        model.addAttribute("logout", false);
+        return "loginSuccess";
+    }
+    
+    /**
+     * This method will provide the medium to logout.
+     */
+    @RequestMapping(value = { "/login" }, method = RequestMethod.GET)
+    public String logoutSuccesful(ModelMap model) {
+        User user = userService.findById(IdUser);
+        this.IdUser = null;
+        model.addAttribute("user", user);
+        model.addAttribute("logout", true);
+        return "logoutSuccess";
+    }
  
 }

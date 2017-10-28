@@ -14,7 +14,7 @@ public interface TaskService {
 	List<Task> findAllActiveTasksbypriority();
 	List<Task> findAllDoneTasks();
 	void save(Task task);
-	void create(Integer TaskId, String Name, String Description, Integer Priority, Integer SubmitUserID);
+	void create(String Name, String Description, Integer Priority, Integer SubmitUserID);
 	boolean done(Integer TaskId, Integer DoneUserId);
 	boolean edit(Integer TaskId, String Name, String Description, Integer Priority);
 	void delete(Integer TaskId);

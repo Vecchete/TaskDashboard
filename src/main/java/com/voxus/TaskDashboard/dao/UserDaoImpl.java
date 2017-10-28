@@ -13,12 +13,12 @@ import com.voxus.taskdashboard.model.User;
   
 @Repository("userDao")
 public class UserDaoImpl extends AbstractDao<Integer, User> implements UserDao {
- 
+	
     public User findById (Integer id) {
         User user = getByKey(id);
         return user;
     }
- 
+	
     public User findByUsername(String username) {
         System.out.println("Username : "+username);
         Criteria crit = createEntityCriteria();

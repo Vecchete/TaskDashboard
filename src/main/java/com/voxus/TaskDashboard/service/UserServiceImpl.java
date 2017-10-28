@@ -10,7 +10,7 @@ import com.voxus.taskdashboard.model.*;
 import com.voxus.taskdashboard.dao.*;
 
 
-@Service("userProfileService")
+@Service("userService")
 @Transactional
 public class UserServiceImpl implements UserService{
      
