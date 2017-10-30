@@ -51,11 +51,11 @@ public class TaskServiceImpl implements TaskService{
     
     public void create (String Name, String Description, Integer Priority, Integer SubmitUserID) {
     	Task task = new Task();
-    	task.setName(Name);
-    	task.setDesc(Description);
+    	task.setTaskName(Name);
+    	task.setDescription(Description);
     	task.setPriority(Priority);
-    	task.setSubmitID(SubmitUserID);
-    	task.setDoneID(0);
+    	task.setSubmitUserID(SubmitUserID);
+    	task.setDoneUserID(0);
     	task.setStatus(1);
     	save(task);
     }
@@ -63,7 +63,7 @@ public class TaskServiceImpl implements TaskService{
     public boolean done (Integer TaskId, Integer DoneUserId) {
     	Task task = dao.findById(TaskId);
     	if (task!=null) {
-    		task.setDoneID(DoneUserId);
+    		task.setDoneUserID(DoneUserId);
         	save(task);
         	return true;
     	}else {
@@ -74,8 +74,8 @@ public class TaskServiceImpl implements TaskService{
     public boolean edit(Integer TaskId, String Name, String Description, Integer Priority) {
     	Task task = dao.findById(TaskId);
     	if (task!=null) {
-    		task.setName(Name);
-        	task.setDesc(Description);
+    		task.setTaskName(Name);
+        	task.setDescription(Description);
         	task.setPriority(Priority);
     		save(task);
     		return true;

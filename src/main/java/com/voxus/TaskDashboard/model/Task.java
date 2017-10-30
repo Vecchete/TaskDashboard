@@ -52,19 +52,19 @@ public class Task {
 		this.TaskId = Id;
 	}
 	
-	public String getName() {
+	public String getTaskName() {
 		return TaskName;
 	}
 	
-	public void setName(String Name) {
+	public void setTaskName(String Name) {
 		this.TaskName = Name;
 	}
 	
-	public String getDesc() {
+	public String getDescription() {
 		return Description;
 	}
 	
-	public void setDesc(String description) {
+	public void setDescription(String description) {
 		this.Description = description;
 	}
 	
@@ -76,20 +76,20 @@ public class Task {
 		this.Priority = Priority;
 	}
 	
-	public Integer getSubmitID() {
+	public Integer getSubmitUserID() {
 		return SubmitUserID;
 	}
 	
-	public void setSubmitID(Integer id) {
+	public void setSubmitUserID(Integer id) {
 		this.SubmitUserID = id;
 	}
-	
-	public Integer getDoneID() {
-		return SubmitUserID;
+		
+	public Integer getDoneUserID() {
+		return DoneUserID;
 	}
 	
-	public void setDoneID(Integer id) {
-		this.SubmitUserID = id;
+	public void setDoneUserID(Integer id) {
+		this.DoneUserID = id;
 	}
 	
 	public Integer getStatus() {

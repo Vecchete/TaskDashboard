@@ -1,6 +1,6 @@
 package com.voxus.taskdashboard.controller;
 
-import java.util.List;
+import java.util.*;
 import java.util.Locale;
  
 import javax.validation.Valid;
@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
  
 import com.voxus.taskdashboard.model.*;
 import com.voxus.taskdashboard.service.*;
+import com.voxus.taskdashboard.controller.*;
  
 @Controller
 @RequestMapping("/")
@@ -26,7 +27,7 @@ import com.voxus.taskdashboard.service.*;
 public class AppController {
 	private Integer IdUserCounter = 0;
 	private Integer IdTaskCounter = 0;
-	private Integer IdUser = 0;
+	private Integer IdUser = 1;
 	
     @Autowired
     UserService userService;
@@ -45,7 +46,17 @@ public class AppController {
     @RequestMapping(value = { "/", "/list" }, method = RequestMethod.GET)
     public String listTasks(ModelMap model) {
         List<Task> tasks = taskService.findAllActiveTasksbypriority();
-        model.addAttribute("tasks", tasks);
+        Iterator<Task> it = tasks.iterator();
+        User user;
+        Task task;
+        List<TaskUser> pairs = new ArrayList<TaskUser>();
+        while(it.hasNext()) {
+        		task = (Task)it.next();
+        		user = userService.findById(task.getSubmitUserID());
+        		TaskUser pair = new TaskUser(task,user.getUsername());
+        		pairs.add(pair);
+        	}
+        model.addAttribute("pairs", pairs);
         return "taskslist";
     }
  
@@ -70,10 +81,10 @@ public class AppController {
         if (result.hasErrors()) {
             return "registration";
         }
-        taskService.create(task.getName(), task.getDesc(), task.getPriority(), this.IdUser);
+        taskService.create(task.getTaskName(), task.getDescription(), task.getPriority(), this.IdUser);
         task = taskService.findById(IdTaskCounter);
         IdTaskCounter++;
-        model.addAttribute("success", "Task " + task.getName() + " registered successfully");
+        model.addAttribute("success", "Task " + task.getTaskName() + " registered successfully");
         //return "success";
         return "registrationsuccess";
     }
@@ -100,13 +111,13 @@ public class AppController {
         if (result.hasErrors()) {
             return "registration";
         }
-        if (!task.getSubmitID().equals(IdUser)) {
+        if (!task.getSubmitUserID().equals(IdUser)) {
         	FieldError updateIDError = new FieldError("task","IdUser",messageSource.getMessage("non.permission.ID", new String[]{Integer.toString(task.getId())}, Locale.getDefault()));
         	result.addError(updateIDError);
         	return "registration";
         }else {
-        	taskService.edit(task.getId(), task.getName(), task.getDesc(), task.getPriority());
-        	model.addAttribute("success", "Task " + task.getName() + " updated successfully");
+        	taskService.edit(task.getId(), task.getTaskName(), task.getDescription(), task.getPriority());
+        	model.addAttribute("success", "Task " + task.getTaskName() + " updated successfully");
             return "registrationsuccess";
         }
     }
@@ -118,7 +129,7 @@ public class AppController {
     @RequestMapping(value = { "/delete-task-{Id}" }, method = RequestMethod.GET)
     public String deleteUser(@PathVariable Integer Id,BindingResult result,ModelMap model) {
     	Task task = taskService.findById(Id);
-    	if (!task.getSubmitID().equals(IdUser)) {
+    	if (!task.getSubmitUserID().equals(IdUser)) {
         	FieldError updateIDError = new FieldError("task","IdUser",messageSource.getMessage("non.permission.ID", new String[]{Integer.toString(task.getId())}, Locale.getDefault()));
         	result.addError(updateIDError);
         	return "redirect:/list";

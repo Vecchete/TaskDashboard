@@ -25,16 +25,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                <c:forEach items="${tasks}" var="task">
+                <c:forEach items="${pairs}" var="pair">
                     <tr>
-                        <td>${task.Name}</td>
-                        <td>${task.SubmitUserID}</td>
-                        <td>${task.Priority}</td>
-                        <td>${task.TaskId}</td>
-                        <td><a href="<c:url value='/edit-task-${task.TaskId}' />" class="btn btn-success 
+                        <td>${pair.getName()}</td>
+                        <td>${pair.getUsername()}</td>
+                        <td>${pair.getPriority()}</td>
+                        <td><a href="<c:url value='/edit-task-${pair.getId()}' />" class="btn btn-success 
  
 custom-width">edit</a></td>
-                        <td><a href="<c:url value='/delete-task-${task.TaskId}' />" class="btn btn-danger 
+                        <td><a href="<c:url value='/delete-task-${pair.getId()}' />" class="btn btn-danger 
  
 custom-width">delete</a></td>
                     </tr>
