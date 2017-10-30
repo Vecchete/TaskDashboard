@@ -1,5 +1,6 @@
 # TaskDashboard
 TaskDashboard for voxus
+
 Trabalho está incompleto, só consegui impelementar o serviço de criação, edição e deleção de tasks.
 
 Posso ter escolhido as coisas erradas para fazer esse projeto, mas vou deixar aqui meu relatório. Para desenvolver o trabalho eu usei 
@@ -15,17 +16,24 @@ excelente implementação do padrão MVC.
 - Hibernate
 
 É um framework de mapeamento objeto-relacional, usei para facilitar o tratamento dos dados do BD, relacionando eles com um objeto em java.
+
 - MySQL Server 5.6
 
 Usado para criar o BD. Usei um servidor local para testar o BD.
 
 - Maven 3
+
 Utilizei para automatizar o processo de compilação.
+
 - JDK 1.7
+
 Utilizado para desenvolver em Java, embora ja possua uma versão atual.
 - Tomcat 8.5
+
 Utilziado para simular o servidor local.
+
 - Eclipse NEON
+
 Utilziado para desenvolver.
 
 Eu comecei a implementação criando um banco de dados local usano MySQL Server, o código em sql do banco está descrito abaixo:
@@ -70,7 +78,10 @@ intruções do BD de fato.
 E criei as classes de configuração e controle (controller).
 
 Por fim, criei as paginas .jsp:
+
   -registration.jsp: Pagina que possui o formulario de criação de task.
+  
   -taskslist.jsp: Pagina que possui a lista de tasks.
+  
   -registratiosuccess.jsp: Pagina que fala que o registro da task foi feito com sucesso.
   
